@@ -1,0 +1,102 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~react-toastify/dist/ReactToastify.css';
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgb(82, 82, 82);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+.characters {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &__card {
+        margin: 0.75rem;
+        width: 19rem;
+        height: 34rem;
+        box-shadow: -0.1em 0 0.4em gray;
+        &__header {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__card:hover {
+        transform: scale(1.1);
+        transition: transform 6s 2s;
+        z-index: 1;
+    }
+    &__search {
+        &__label {
+            text-transform: capitalize;
+            font-weight: 300;
+            text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke,
+                0 -1px whitesmoke;
+        }
+        &__input {
+            border: none;
+        }
+    }
+    &__nav {
+        box-shadow: 0px 4px 31px 1px #212529c7;
+        background-color: rgb(36, 40, 47);
+        &__navlink {
+            text-decoration: none;
+        }
+    }
+    &__status {
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        &__favourite {
+            transition: color 1s;
+        }
+        &__icon {
+            height: 0.5rem;
+            width: 0.5rem;
+            margin-right: 0.375rem;
+            border-radius: 50%;
+            &--Alive {
+                background: rgb(85, 204, 68);
+            }
+            &--Dead {
+                background: rgb(214, 61, 46);
+            }
+            &--unknown {
+                background: rgb(158, 158, 158);
+            }
+        }
+    }
+    &__pagination {
+        display: inline-block;
+        position: fixed;
+        z-index: 2;
+        bottom: 0;
+        background: rgba(221, 218, 218, 0.541);
+        border-radius: 10px;
+        right: 0;
+        li {
+            color: black;
+            float: left;
+            padding: 2px 10px;
+            transition: background-color 0.3s;
+            list-style-type: none;
+        }
+        &--active {
+            border: 1px solid #525252;
+            border-radius: 8px;
+        }
+    }
+}
